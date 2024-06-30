@@ -98,7 +98,7 @@ class _mapscreenState extends State<mapscreen> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => productPage()));
+                                  builder: (context) => ProductPage()));
                         },
                         decoration: InputDecoration(
                           border: InputBorder.none,

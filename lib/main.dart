@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:market_place_2/screens/onboarding/onboardin1.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 void main() {
   runApp(const MyApp());

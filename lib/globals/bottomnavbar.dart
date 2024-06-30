@@ -1,0 +1,144 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:market_place_2/globals/customaizables.dart';
+
+class Bottomnavbar extends StatelessWidget {
+  String page = "Home";
+
+  Bottomnavbar({super.key, required this.page});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.only(left: 15, right: 15),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                child: IconButton(
+                    focusColor: green,
+                    onPressed: () {},
+                    icon: Icon(
+                        size: 30,
+                        Icons.home_filled,
+                        color: page == "Home" ? green : Colors.black)),
+              ),
+              Text(
+                "Home",
+                style: TextStyle(
+                  color: page == "Home" ? green : Colors.black,
+                  decoration: TextDecoration.none,
+                  fontFamily: "SF-Pro",
+                  fontSize: 14,
+                  fontStyle: FontStyle.normal,
+                  fontWeight: FontWeight.w400,
+                ),
+              )
+            ],
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                child: IconButton(
+                    focusColor: green,
+                    onPressed: () {},
+                    icon: Icon(
+                        size: 30,
+                        Icons.storefront_outlined,
+                        color: page == "Store" ? green : Colors.black)),
+              ),
+              Text(
+                "Store",
+                style: TextStyle(
+                  color: page == "Store" ? green : Colors.black,
+                  decoration: TextDecoration.none,
+                  fontFamily: "SF-Pro",
+                  fontSize: 14,
+                  fontStyle: FontStyle.normal,
+                  fontWeight: FontWeight.w400,
+                ),
+              )
+            ],
+          ),
+
+          //////
+          ///
+          Container(
+            margin: EdgeInsets.only(bottom: 10),
+            height: 60,
+            width: 60,
+            decoration: BoxDecoration(
+                color: green,
+                borderRadius: BorderRadius.all(Radius.circular(50))),
+            child: IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  size: 40,
+                  Icons.add,
+                  color: white,
+                )),
+          ),
+          //////////
+          ///
+          ///
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                child: IconButton(
+                    focusColor: green,
+                    onPressed: () {},
+                    icon: Icon(
+                        size: 30,
+                        Icons.business,
+                        color: page == "Hostel" ? green : Colors.black)),
+              ),
+              Text(
+                "Hostel",
+                style: TextStyle(
+                  color: page == "Hostel" ? green : Colors.black,
+                  decoration: TextDecoration.none,
+                  fontFamily: "SF-Pro",
+                  fontSize: 14,
+                  fontStyle: FontStyle.normal,
+                  fontWeight: FontWeight.w400,
+                ),
+              )
+            ],
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                child: IconButton(
+                    focusColor: green,
+                    onPressed: () {},
+                    icon: Icon(
+                        size: 30,
+                        Icons.person_outline_rounded,
+                        color: page == "Profile" ? green : Colors.black)),
+              ),
+              Text(
+                "Profile",
+                style: TextStyle(
+                  color: page == "Profile" ? green : Colors.black,
+                  decoration: TextDecoration.none,
+                  fontFamily: "SF-Pro",
+                  fontSize: 14,
+                  fontStyle: FontStyle.normal,
+                  fontWeight: FontWeight.w400,
+                ),
+              )
+            ],
+          ),
+        ],
+      ),
+      height: 82,
+    );
+  }
+}

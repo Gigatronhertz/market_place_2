@@ -12,21 +12,23 @@ class textfeild extends StatelessWidget {
       {this.boder = 0,
       required this.helpertxt,
       required this.icon,
-      required this.title,
+      this.title = "",
       this.lagicon = ""});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
-          padding: EdgeInsets.all(10),
-          alignment: Alignment.centerLeft,
-          child: Text(
-            title,
-            style: onboardsmall,
-          ),
-        ),
+        this.title != ""
+            ? Container(
+                padding: EdgeInsets.all(10),
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  title,
+                  style: onboardsmall,
+                ),
+              )
+            : SizedBox(),
         Container(
           padding: EdgeInsets.all(10),
           width: MediaQuery.of(context).size.width / 1,
