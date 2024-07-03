@@ -5,11 +5,30 @@ import 'package:flutter/widgets.dart';
 import 'package:market_place_2/globals/customaizables.dart';
 
 class Categories extends StatelessWidget {
-  const Categories({super.key});
+  String types = "";
+  Categories({super.key, required this.types});
 
   @override
   Widget build(BuildContext context) {
     List<String> categories = [
+      "All",
+      "Clothing",
+      "Smartphones",
+      "Laptops",
+      "Food",
+      "Accessories",
+      "Other"
+    ];
+    List<String> hostelcategories = [
+      "2 bedroom",
+      "3 beds",
+      "self-con",
+      "detached",
+      "single room",
+      "4bed",
+      "Other"
+    ];
+    List<String> storecategories = [
       "All",
       "Clothing",
       "Smartphones",
@@ -24,7 +43,7 @@ class Categories extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
+          const Row(
             children: [
               Text(
                 "Categories",
@@ -48,10 +67,14 @@ class Categories extends StatelessWidget {
                   margin: EdgeInsets.symmetric(horizontal: 10),
                   padding: EdgeInsets.symmetric(horizontal: 15),
                   alignment: Alignment.center,
-                  child: Text(categories[index]),
                   decoration: BoxDecoration(
                       border: Border.all(color: green, width: 2),
                       borderRadius: BorderRadius.all(Radius.circular(15))),
+                  child: Text(types == "hostel"
+                      ? hostelcategories[index]
+                      : types == "products"
+                          ? categories[index]
+                          : storecategories[index]),
                 );
               },
             ),

@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:market_place_2/globals/customaizables.dart';
+import 'package:market_place_2/screens/hostel_screens/hostel_scrren.dart';
+import 'package:market_place_2/screens/product_screens/product_page.dart';
+import 'package:market_place_2/screens/store_screens/storescreen.dart';
 
 class Bottomnavbar extends StatelessWidget {
   String page = "Home";
@@ -10,7 +13,8 @@ class Bottomnavbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(left: 15, right: 15),
+      margin: const EdgeInsets.only(left: 15, right: 15),
+      height: 82,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -21,7 +25,13 @@ class Bottomnavbar extends StatelessWidget {
               Container(
                 child: IconButton(
                     focusColor: green,
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const ProductPage(),
+                          ));
+                    },
                     icon: Icon(
                         size: 30,
                         Icons.home_filled,
@@ -46,16 +56,22 @@ class Bottomnavbar extends StatelessWidget {
               Container(
                 child: IconButton(
                     focusColor: green,
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const hostelscreen(),
+                          ));
+                    },
                     icon: Icon(
                         size: 30,
-                        Icons.storefront_outlined,
-                        color: page == "Store" ? green : Colors.black)),
+                        Icons.business,
+                        color: page == "Hostel" ? green : Colors.black)),
               ),
               Text(
-                "Store",
+                "Hostel",
                 style: TextStyle(
-                  color: page == "Store" ? green : Colors.black,
+                  color: page == "Hostel" ? green : Colors.black,
                   decoration: TextDecoration.none,
                   fontFamily: "SF-Pro",
                   fontSize: 14,
@@ -69,15 +85,15 @@ class Bottomnavbar extends StatelessWidget {
           //////
           ///
           Container(
-            margin: EdgeInsets.only(bottom: 10),
+            margin: const EdgeInsets.only(bottom: 10),
             height: 60,
             width: 60,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
                 color: green,
                 borderRadius: BorderRadius.all(Radius.circular(50))),
             child: IconButton(
                 onPressed: () {},
-                icon: Icon(
+                icon: const Icon(
                   size: 40,
                   Icons.add,
                   color: white,
@@ -92,16 +108,22 @@ class Bottomnavbar extends StatelessWidget {
               Container(
                 child: IconButton(
                     focusColor: green,
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const Storescreen(),
+                          ));
+                    },
                     icon: Icon(
                         size: 30,
-                        Icons.business,
-                        color: page == "Hostel" ? green : Colors.black)),
+                        Icons.storefront_outlined,
+                        color: page == "Store" ? green : Colors.black)),
               ),
               Text(
-                "Hostel",
+                "Store",
                 style: TextStyle(
-                  color: page == "Hostel" ? green : Colors.black,
+                  color: page == "Store" ? green : Colors.black,
                   decoration: TextDecoration.none,
                   fontFamily: "SF-Pro",
                   fontSize: 14,
@@ -138,7 +160,6 @@ class Bottomnavbar extends StatelessWidget {
           ),
         ],
       ),
-      height: 82,
     );
   }
 }

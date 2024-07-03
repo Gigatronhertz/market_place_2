@@ -12,7 +12,6 @@ import 'package:market_place_2/screens/auth_screens/otpscreen.dart';
 import 'package:market_place_2/screens/auth_screens/sign_up2.dart';
 import 'package:market_place_2/screens/onboarding/onboardin1.dart';
 import 'package:market_place_2/screens/product_screens/product_page.dart';
-import 'package:market_place_2/screens/profile/location.dart';
 
 class editprofile extends StatefulWidget {
   const editprofile({super.key});
@@ -95,7 +94,7 @@ class _editprofileState extends State<editprofile> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => location1(),
+                      builder: (context) => ProductPage(),
                     ));
               },
               child: Container(

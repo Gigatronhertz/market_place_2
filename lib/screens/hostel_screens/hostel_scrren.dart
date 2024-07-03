@@ -7,30 +7,33 @@ import 'package:market_place_2/globals/bottomnavbar.dart';
 import 'package:market_place_2/globals/categorieswidget.dart';
 import 'package:market_place_2/globals/customaizables.dart';
 import 'package:market_place_2/globals/text_input_widget.dart';
+import 'package:market_place_2/screens/hostel_screens/hostel_detail.dart';
 import 'package:market_place_2/screens/product_screens/productdetail.dart';
 
-class ProductPage extends StatefulWidget {
-  const ProductPage({super.key});
+class hostelscreen extends StatefulWidget {
+  const hostelscreen({super.key});
 
   @override
-  State<ProductPage> createState() => _ProductPageState();
+  State<hostelscreen> createState() => _hostelscreenState();
 }
 
-class _ProductPageState extends State<ProductPage> {
+class _hostelscreenState extends State<hostelscreen> {
   @override
   Widget build(BuildContext context) {
     int _index = 0;
     List<String> images = [
-      "IMG-20240207-WA0051.jpg",
-      "IMG-20240405-WA0015.jpg",
-      "IMG-20240405-WA0032.jpg",
-      "IMG-20240417-WA0007.jpg",
-      "IMG-20240411-WA0061.jpg",
-      "IMG-20240409-WA0116.jpg",
-      "IMG-20240405-WA0032.jpg",
-      "IMG-20240417-WA0007.jpg",
-      "IMG-20240411-WA0061.jpg",
-      "IMG-20240411-WA0061.jpg",
+      "image 72 (1).png",
+      "image 72 (2).png",
+      "image 72 (1).png",
+      "image 72 (2).png",
+      "image 72 (1).png",
+      "image 72 (2).png",
+      "image 72 (1).png",
+      "image 72 (2).png",
+      "image 72 (1).png",
+      "image 72 (2).png",
+      "image 72 (1).png",
+      "image 72 (2).png",
     ];
 
     return Scaffold(
@@ -73,7 +76,7 @@ class _ProductPageState extends State<ProductPage> {
                                 style: onboardsmall,
                               ),
                               Text(
-                                "Richmond",
+                                "Find Hostels",
                                 style: topskip,
                                 textAlign: TextAlign.left,
                               ),
@@ -121,7 +124,7 @@ class _ProductPageState extends State<ProductPage> {
               child: Padding(
                 padding: EdgeInsets.all(0),
                 child: Categories(
-                  types: "products",
+                  types: "hostel",
                 ),
               ),
             ),
@@ -132,20 +135,18 @@ class _ProductPageState extends State<ProductPage> {
                 padding: const EdgeInsets.all(8),
                 mainAxisSpacing: 15,
                 crossAxisSpacing: 10,
-                crossAxisCount: 2,
+                crossAxisCount: 1,
                 itemCount: images.length,
                 itemBuilder: (context, index) {
                   return Column(
                     children: [
-                      index % 4 == 0 || index == images.length
-                          ? Adswidget()
-                          : SizedBox(),
+                      index % 4 == 0 && index != 0 ? Adswidget() : SizedBox(),
                       InkWell(
                         onTap: () {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => Productdetail(),
+                                builder: (context) => hosteldetail(),
                               ));
                         },
                         child: Container(
@@ -175,7 +176,7 @@ class _ProductPageState extends State<ProductPage> {
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  const Text("Ladies Bracelet",
+                                  const Text("2 bed room",
                                       textAlign: TextAlign.start,
                                       style: topskip),
                                   const SizedBox(height: 5),
@@ -193,10 +194,26 @@ class _ProductPageState extends State<ProductPage> {
                                     ],
                                   ),
                                   const SizedBox(height: 8),
-                                  const Text("fine small affordable bracelets",
+                                  const Text(
+                                      "very spaciouos with water and constant light",
                                       textAlign: TextAlign.start,
                                       style: tinytext),
                                   const SizedBox(height: 8),
+                                  Row(
+                                    children: [
+                                      Container(
+                                          margin:
+                                              const EdgeInsets.only(right: 10),
+                                          child: Icon(Icons.location_on)),
+                                      Container(
+                                        alignment: Alignment.center,
+                                        child: const Text(
+                                            "Ifite near school gate ",
+                                            textAlign: TextAlign.start,
+                                            style: onboardsmall),
+                                      ),
+                                    ],
+                                  ),
                                   Row(
                                     children: [
                                       Container(
@@ -233,6 +250,6 @@ class _ProductPageState extends State<ProductPage> {
             ),
           ],
         ),
-        bottomNavigationBar: Bottomnavbar(page: "Home"));
+        bottomNavigationBar: Bottomnavbar(page: "Hostel"));
   }
 }

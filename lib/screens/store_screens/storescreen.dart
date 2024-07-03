@@ -6,17 +6,19 @@ import 'package:market_place_2/globals/adswidget.dart';
 import 'package:market_place_2/globals/bottomnavbar.dart';
 import 'package:market_place_2/globals/categorieswidget.dart';
 import 'package:market_place_2/globals/customaizables.dart';
+import 'package:market_place_2/globals/squarebutton.dart';
 import 'package:market_place_2/globals/text_input_widget.dart';
 import 'package:market_place_2/screens/product_screens/productdetail.dart';
+import 'package:market_place_2/screens/store_screens/storedetail.dart';
 
-class ProductPage extends StatefulWidget {
-  const ProductPage({super.key});
+class Storescreen extends StatefulWidget {
+  const Storescreen({super.key});
 
   @override
-  State<ProductPage> createState() => _ProductPageState();
+  State<Storescreen> createState() => _StorescreenState();
 }
 
-class _ProductPageState extends State<ProductPage> {
+class _StorescreenState extends State<Storescreen> {
   @override
   Widget build(BuildContext context) {
     int _index = 0;
@@ -73,7 +75,7 @@ class _ProductPageState extends State<ProductPage> {
                                 style: onboardsmall,
                               ),
                               Text(
-                                "Richmond",
+                                "Find stores near you ",
                                 style: topskip,
                                 textAlign: TextAlign.left,
                               ),
@@ -102,26 +104,19 @@ class _ProductPageState extends State<ProductPage> {
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 15),
                   child: textfeild(
-                    helpertxt: "search",
+                    helpertxt: "Find Stores",
                     icon: Icons.search,
                   ),
                 ),
               ),
             ),
-            const SliverToBoxAdapter(
-              child: Padding(
-                padding: EdgeInsets.all(15.0),
-                child: ClipRRect(
-                    borderRadius: BorderRadius.all(Radius.circular(20)),
-                    child: AdsSlider()),
-              ),
-            ),
+
             /////////////////////////////////////////
             SliverToBoxAdapter(
               child: Padding(
-                padding: EdgeInsets.all(0),
+                padding: EdgeInsets.only(top: 20),
                 child: Categories(
-                  types: "products",
+                  types: "stores",
                 ),
               ),
             ),
@@ -132,100 +127,107 @@ class _ProductPageState extends State<ProductPage> {
                 padding: const EdgeInsets.all(8),
                 mainAxisSpacing: 15,
                 crossAxisSpacing: 10,
-                crossAxisCount: 2,
+                crossAxisCount: 1,
                 itemCount: images.length,
                 itemBuilder: (context, index) {
                   return Column(
                     children: [
-                      index % 4 == 0 || index == images.length
-                          ? Adswidget()
-                          : SizedBox(),
-                      InkWell(
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => Productdetail(),
-                              ));
-                        },
-                        child: Container(
+                      index % 4 == 0 && index != 0 ? Adswidget() : SizedBox(),
+                      Stack(alignment: Alignment.center, children: [
+                        Container(
+                          height: MediaQuery.of(context).size.height / 3,
+                          width: MediaQuery.of(context).size.width / 1,
+
                           padding: const EdgeInsets.all(5),
                           decoration: BoxDecoration(
                             border: Border.all(color: green, width: 2),
                             borderRadius:
                                 const BorderRadius.all(Radius.circular(20)),
                           ),
-                          child: Column(
-                            children: [
-                              Container(
-                                decoration: const BoxDecoration(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(20)),
-                                ),
-                                child: ClipRRect(
-                                  borderRadius: const BorderRadius.all(
-                                      Radius.circular(20)),
-                                  child: Image.asset(
-                                      "assets/images/${images[index]}"),
-                                ),
+                          child: Container(
+                            decoration: const BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(20)),
+                            ),
+                            child: ClipRRect(
+                              borderRadius:
+                                  const BorderRadius.all(Radius.circular(20)),
+                              child: Image.asset(
+                                color: Color.fromARGB(162, 0, 0, 0),
+                                "assets/images/${images[index]}",
+                                colorBlendMode: BlendMode.darken,
+                                fit: BoxFit.cover,
                               ),
-                              const SizedBox(
+                            ),
+                          ),
+                          // Add some space between the image and text
+                        ),
+                        Center(
+                          child: Container(
+                            alignment: Alignment.center,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text("Richmond's Store",
+                                    textAlign: TextAlign.center,
+                                    style: boldwhitetext),
+                                SizedBox(
                                   height:
-                                      8), // Add some space between the image and text
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  const Text("Ladies Bracelet",
-                                      textAlign: TextAlign.start,
-                                      style: topskip),
-                                  const SizedBox(height: 5),
-                                  Row(
-                                    children: [
-                                      Container(
-                                          margin:
-                                              const EdgeInsets.only(right: 8),
-                                          height: 15,
-                                          child: Image.asset(
-                                              "assets/images/Vector (8).png")),
-                                      const Text("2,500",
-                                          textAlign: TextAlign.start,
-                                          style: topskip),
-                                    ],
+                                      MediaQuery.of(context).size.height / 100,
+                                ),
+                                Text("Ifite near school gate ",
+                                    textAlign: TextAlign.center,
+                                    style: greenbtntext),
+                                SizedBox(
+                                  height:
+                                      MediaQuery.of(context).size.height / 100,
+                                ),
+                                SizedBox(
+                                  height: 60,
+                                  width:
+                                      MediaQuery.of(context).size.width / 2.5,
+                                  child: InkWell(
+                                    onTap: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => Storedetail(),
+                                          ));
+                                    },
+                                    child: RoundedButton(
+                                        buttonText: Text(
+                                          "Check Out Store!",
+                                          style: greenbtntext,
+                                        ),
+                                        color: white,
+                                        height: 15),
                                   ),
-                                  const SizedBox(height: 8),
-                                  const Text("fine small affordable bracelets",
-                                      textAlign: TextAlign.start,
-                                      style: tinytext),
-                                  const SizedBox(height: 8),
-                                  Row(
-                                    children: [
-                                      Container(
-                                        child: const Icon(
-                                          Icons.verified_outlined,
-                                          color: green,
-                                        ),
-                                      ),
-                                      const Expanded(child: SizedBox()),
-                                      Container(
-                                        padding: const EdgeInsets.all(8),
-                                        decoration: BoxDecoration(
-                                            borderRadius:
-                                                const BorderRadius.all(
-                                                    Radius.circular(15)),
-                                            color: green.withOpacity(0.3)),
-                                        child: const Text(
-                                          style: onboardsmall,
-                                          "2/13/2024",
-                                        ),
-                                      )
-                                    ],
-                                  )
-                                ],
-                              ),
-                            ],
+                                ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Container(
+                                        margin: const EdgeInsets.only(
+                                            right: 5, top: 10),
+                                        child: Icon(
+                                          Icons.location_on,
+                                          color: white,
+                                        )),
+                                    Container(
+                                      margin: const EdgeInsets.only(top: 10),
+                                      alignment: Alignment.center,
+                                      child: const Text(
+                                          "Ifite near school gate ",
+                                          textAlign: TextAlign.start,
+                                          style: greenbtntext),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
                         ),
-                      ),
+                      ]),
                     ],
                   );
                 },
@@ -233,6 +235,6 @@ class _ProductPageState extends State<ProductPage> {
             ),
           ],
         ),
-        bottomNavigationBar: Bottomnavbar(page: "Home"));
+        bottomNavigationBar: Bottomnavbar(page: "Store"));
   }
 }

@@ -51,6 +51,13 @@ const TextStyle greenbtntext = TextStyle(
     fontStyle: FontStyle.normal,
     fontWeight: FontWeight.w400,
     color: Colors.white);
+const TextStyle boldwhitetext = TextStyle(
+    decoration: TextDecoration.none,
+    fontFamily: "SF-Pro",
+    fontSize: 16,
+    fontStyle: FontStyle.normal,
+    fontWeight: FontWeight.w600,
+    color: Colors.white);
 const TextStyle tinytext = TextStyle(
     height: 1,
     fontFamily: "SF-Pro",
