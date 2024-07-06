@@ -6,6 +6,7 @@ import 'package:market_place_2/globals/customaizables.dart';
 import 'package:market_place_2/globals/sliderWidget.dart';
 import 'package:market_place_2/globals/squarebutton.dart';
 import 'package:market_place_2/screens/auth_screens/sign_up.dart';
+import 'package:market_place_2/screens/onboarding/select_campus.dart';
 import 'package:market_place_2/screens/product_screens/product_page.dart';
 
 class onboarding3 extends StatefulWidget {
@@ -91,7 +92,7 @@ class _onboarding3State extends State<onboarding3> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => signup(),
+                                builder: (context) => SelectCampus(),
                               ));
                         },
                         child: RoundedButton(
