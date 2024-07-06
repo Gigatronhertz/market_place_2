@@ -105,6 +105,10 @@ class _EditStoreState extends State<EditStore> {
                 title: "Store Description",
                 helpertxt: "Describe your store",
                 icon: Icons.description),
+            textfeild(
+                title: "Location",
+                helpertxt: "Describe your store's location",
+                icon: Icons.location_on),
             // Campus selection dropdown
             Container(
               padding: EdgeInsets.all(10),
