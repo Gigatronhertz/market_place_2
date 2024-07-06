@@ -80,9 +80,32 @@ class _ProductPageState extends State<ProductPage> {
                             ],
                           ),
                           const Expanded(child: SizedBox()),
-                          Image.asset(
-                            "assets/images/bx_heart (1).png",
-                            height: 24,
+                          Stack(
+                            children: [
+                              Image.asset(
+                                "assets/images/bx_heart (1).png",
+                                height: 24,
+                              ),
+                              Positioned(
+                                top: 0,
+                                right: 0,
+                                child: Container(
+                                    alignment: Alignment.center,
+                                    width: 15,
+                                    height: 15,
+                                    padding: EdgeInsets.all(0),
+                                    decoration: BoxDecoration(
+                                        color: green,
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(10))),
+                                    child: Text(
+                                      textAlign: TextAlign.center,
+                                      '2',
+                                      style:
+                                          TextStyle(fontSize: 8, color: white),
+                                    )),
+                              )
+                            ],
                           ),
                           SizedBox(
                             width: MediaQuery.of(context).size.width / 20,
