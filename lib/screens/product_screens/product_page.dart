@@ -39,6 +39,7 @@ class _ProductPageState extends State<ProductPage> {
           clipBehavior: Clip.hardEdge,
           slivers: [
             SliverAppBar(
+              automaticallyImplyLeading: false,
               scrolledUnderElevation: 10,
               backgroundColor: white,
               foregroundColor: white,

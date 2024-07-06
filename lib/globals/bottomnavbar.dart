@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:market_place_2/globals/customaizables.dart';
 import 'package:market_place_2/screens/hostel_screens/hostel_scrren.dart';
 import 'package:market_place_2/screens/product_screens/product_page.dart';
+import 'package:market_place_2/screens/profile/editprofile.dart';
 import 'package:market_place_2/screens/store_screens/storescreen.dart';
 
 class Bottomnavbar extends StatelessWidget {
@@ -139,7 +140,13 @@ class Bottomnavbar extends StatelessWidget {
               Container(
                 child: IconButton(
                     focusColor: green,
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const editprofile(),
+                          ));
+                    },
                     icon: Icon(
                         size: 30,
                         Icons.person_outline_rounded,
