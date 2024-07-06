@@ -4,6 +4,7 @@ import 'package:market_place_2/globals/customaizables.dart';
 import 'package:market_place_2/screens/hostel_screens/hostel_scrren.dart';
 import 'package:market_place_2/screens/product_screens/product_page.dart';
 import 'package:market_place_2/screens/profile/editprofile.dart';
+import 'package:market_place_2/screens/store_screens/editstore.dart';
 import 'package:market_place_2/screens/store_screens/storescreen.dart';
 
 class Bottomnavbar extends StatelessWidget {
@@ -113,7 +114,7 @@ class Bottomnavbar extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const Storescreen(),
+                            builder: (context) => const EditStore(),
                           ));
                     },
                     icon: Icon(
