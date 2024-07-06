@@ -144,7 +144,7 @@ class Bottomnavbar extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const editprofile(),
+                            builder: (context) => const EditProfile(),
                           ));
                     },
                     icon: Icon(

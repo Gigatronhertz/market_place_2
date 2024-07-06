@@ -74,7 +74,7 @@ class _newpasswordState extends State<newpassword> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => editprofile(),
+                      builder: (context) => EditProfile(),
                     ));
 
                 showDialog(
