@@ -107,6 +107,20 @@ class _ProductdetailState extends State<Productdetail> {
                       ],
                     ),
                   ),
+                  Row(
+                    children: [
+                      Container(
+                          margin: const EdgeInsets.only(
+                              right: 10, left: 10, top: 10),
+                          child: Icon(Icons.location_on)),
+                      Container(
+                        margin: const EdgeInsets.only(top: 10),
+                        alignment: Alignment.center,
+                        child: const Text("Ifite near school gate ",
+                            textAlign: TextAlign.start, style: onboardsmall),
+                      ),
+                    ],
+                  ),
                   Expanded(
                     child: SingleChildScrollView(
                       scrollDirection: Axis.vertical,
@@ -126,6 +140,23 @@ class _ProductdetailState extends State<Productdetail> {
                             margin: EdgeInsets.only(left: 12, bottom: 20),
                             child: Text(
                               "Discover the ultimate blend of comfort and performance with our Ladies Long Sleeve V Neck Moisture Wicking Athletic Shirt.",
+                              style: descriptiontext,
+                              textAlign: TextAlign.start,
+                            ),
+                          ),
+                          Container(
+                            margin:
+                                EdgeInsets.only(left: 12, bottom: 10, top: 0),
+                            child: Text(
+                              "Warning",
+                              style: smallbold,
+                              textAlign: TextAlign.start,
+                            ),
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(left: 12, bottom: 20),
+                            child: Text(
+                              " Please dont pay for any item before reciving it",
                               style: descriptiontext,
                               textAlign: TextAlign.start,
                             ),
