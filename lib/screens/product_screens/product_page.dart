@@ -7,6 +7,7 @@ import 'package:market_place_2/globals/bottomnavbar.dart';
 import 'package:market_place_2/globals/categorieswidget.dart';
 import 'package:market_place_2/globals/customaizables.dart';
 import 'package:market_place_2/globals/text_input_widget.dart';
+import 'package:market_place_2/screens/chat_screen/chatscreen.dart';
 import 'package:market_place_2/screens/product_screens/productdetail.dart';
 
 class ProductPage extends StatefulWidget {
@@ -111,9 +112,18 @@ class _ProductPageState extends State<ProductPage> {
                           SizedBox(
                             width: MediaQuery.of(context).size.width / 20,
                           ),
-                          Image.asset(
-                            "assets/images/mage_message-round (1).png",
-                            height: 24,
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => ChatPage(),
+                                  ));
+                            },
+                            child: Image.asset(
+                              "assets/images/mage_message-round (1).png",
+                              height: 24,
+                            ),
                           )
                         ],
                       ),
