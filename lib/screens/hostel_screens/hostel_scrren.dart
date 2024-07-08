@@ -259,6 +259,46 @@ class _hostelscreenState extends State<hostelscreen> {
                                         ),
                                       )
                                     ],
+                                  ),
+                                  ////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                  ///
+                                  ///
+                                  ///
+                                  ///
+                                  ///
+                                  ///
+                                  ///
+                                  ///
+                                  ///
+                                  ///
+                                  ///
+                                  //////////////tawo heres the code ////////////////////////////////////////////////////////////////////////////////////
+
+                                  Row(
+                                    children: [
+                                      Container(
+                                        //  decoration: BoxDecoration(color: Colors.black38),
+                                        child: IconButton(
+                                            onPressed: () {},
+                                            icon: Icon(
+                                              Icons.edit,
+                                              color: Colors.amber,
+                                            )),
+                                      ),
+                                      Expanded(
+                                          child: SizedBox(
+                                        width: 10,
+                                      )),
+                                      Container(
+                                        //  decoration: BoxDecoration(color: Colors.black38),
+                                        child: IconButton(
+                                            onPressed: () {},
+                                            icon: Icon(
+                                              Icons.delete,
+                                              color: Colors.red,
+                                            )),
+                                      ),
+                                    ],
                                   )
                                 ],
                               ),
